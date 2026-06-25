@@ -1,0 +1,6 @@
+Evening roast – pick a person, company, or trend from the news and roast them hard. Be funny and sharp. Under 280 chars. End with a challenge to followers.
+
+News:
+{{news_context}}
+
+Your roast tweet:

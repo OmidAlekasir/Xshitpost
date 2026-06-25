@@ -1,0 +1,7 @@
+requests
+requests-oauthlib
+tweepy
+google-genai
+feedparser
+beautifulsoup4
+lxml

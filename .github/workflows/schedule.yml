@@ -1,0 +1,50 @@
+name: Edgy Shitposter Bot
+
+on:
+  schedule:
+    - cron: '37 7 * * *'   # 07:00 UTC – Morning Rant
+    - cron: '11 13 * * *'  # 13:00 UTC – Afternoon Hot Take
+    - cron: '43 19 * * *'  # 19:00 UTC – Evening Roast
+    - cron: '21 23 * * *'  # 23:00 UTC – Nightly Contrarian
+  workflow_dispatch:      # Manual trigger for testing
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Determine prompt file based on UTC hour
+        id: set_prompt
+        run: |
+          HOUR=$(date -u +%H)
+          case $HOUR in
+            07) PROMPT="morning_rant.txt" ;;
+            13) PROMPT="afternoon_hot_take.txt" ;;
+            19) PROMPT="evening_roast.txt" ;;
+            23) PROMPT="nightly_contrarian.txt" ;;
+            *) PROMPT="morning_rant.txt" ;;   # fallback (should never happen)
+          esac
+          echo "PROMPT_FILE=$PROMPT" >> $GITHUB_ENV
+          echo "Selected prompt: $PROMPT"
+
+      - name: Run the bot
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python main.py

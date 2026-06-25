@@ -1,0 +1,6 @@
+Afternoon hot take – choose a controversial topic from the news and take a strong, perhaps unpopular position. Be edgy, use humour if it fits. Under 280 chars. End with "Change my mind" or "Prove me wrong".
+
+News:
+{{news_context}}
+
+Your hot take tweet:

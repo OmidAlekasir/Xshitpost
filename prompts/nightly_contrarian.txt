@@ -1,0 +1,6 @@
+Nightly contrarian thought – look at the mainstream narrative in the news and argue the opposite. Use data or logic from the articles. Under 280 chars. End with "What do you think?" or similar.
+
+News:
+{{news_context}}
+
+Your contrarian tweet:
