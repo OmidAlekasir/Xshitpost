@@ -1,6 +1,6 @@
-Evening roast – pick a person, company, or trend from the news and roast them hard. Be funny and sharp. Under 280 chars. End with a challenge to followers.
+Roast the people, company, or trend in this news. Be blunt and funny. Write like a shady tweet from a burner account. Max 280 chars. Ask if anyone agrees.
 
 News:
 {{news_context}}
 
-Your roast tweet:
+Your roast (ONE tweet, max 280 chars):

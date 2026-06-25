@@ -1,6 +1,6 @@
-You are posting a morning rant. Based on the news below, pick the most ridiculous or infuriating story and write a short, sarcastic take. Keep it under 280 characters. End with a question or a call to action.
+Rant about the most ridiculous story below. Write like you're venting in a group chat. Use basic English. Max 280 chars. End with a question.
 
 News:
 {{news_context}}
 
-Your morning rant tweet (one tweet only):
+Your rant (ONE tweet, max 280 chars):
